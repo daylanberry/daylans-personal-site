@@ -33,11 +33,6 @@
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
-.project-card.placeholder {
-  background: linear-gradient(135deg, #f8fafc, #f1f5f9);
-  border: 2px dashed #cbd5e1;
-}
-
 .project-header {
   display: flex;
   justify-content: space-between;

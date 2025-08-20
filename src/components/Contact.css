@@ -248,35 +248,3 @@
     padding: 0.625rem 1.5rem;
   }
 }
-
-@media (max-width: 360px) {
-  .contact-container {
-    padding: 0 0.75rem;
-  }
-
-  .contact-card,
-  .form-card {
-    padding: 1.25rem;
-  }
-
-  .contact-card h3,
-  .form-card h3 {
-    font-size: 1.25rem;
-  }
-
-  .form-group input,
-  .form-group textarea {
-    padding: 0.5rem 0.625rem;
-    font-size: 0.9rem;
-  }
-
-  .btn {
-    padding: 0.5rem 1.25rem;
-    font-size: 0.9rem;
-  }
-
-  .method-icon {
-    width: 2rem;
-    height: 2rem;
-  }
-}

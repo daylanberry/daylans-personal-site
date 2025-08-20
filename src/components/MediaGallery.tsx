@@ -29,10 +29,7 @@ const MediaGallery: React.FC<MediaGalleryProps> = ({
 
       <div className="media-grid">
         {items.map((item) => (
-          <div
-            key={item.id}
-            className="media-item"
-          >
+          <div key={item.id} className="media-item">
             <div className="media-thumbnail">
               {item.type === "video" ? (
                 <>

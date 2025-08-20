@@ -24,14 +24,14 @@ const MediaCarousel: React.FC<MediaCarouselProps> = ({
   const [isPlaying, setIsPlaying] = useState(false);
 
   const goToNext = () => {
-    setCurrentIndex((prevIndex) => 
+    setCurrentIndex((prevIndex) =>
       prevIndex === items.length - 1 ? 0 : prevIndex + 1
     );
     setIsPlaying(false);
   };
 
   const goToPrevious = () => {
-    setCurrentIndex((prevIndex) => 
+    setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? items.length - 1 : prevIndex - 1
     );
     setIsPlaying(false);
@@ -43,7 +43,7 @@ const MediaCarousel: React.FC<MediaCarouselProps> = ({
   };
 
   const handlePlayClick = () => {
-    const video = document.querySelector('.carousel-video') as HTMLVideoElement;
+    const video = document.querySelector(".carousel-video") as HTMLVideoElement;
     if (video) {
       video.play();
       setIsPlaying(true);
@@ -90,7 +90,7 @@ const MediaCarousel: React.FC<MediaCarouselProps> = ({
       <div className="carousel-container">
         {/* Main display area */}
         <div className="carousel-main">
-          <button 
+          <button
             className="carousel-nav carousel-nav-prev"
             onClick={goToPrevious}
             aria-label="Previous media"
@@ -130,13 +130,14 @@ const MediaCarousel: React.FC<MediaCarouselProps> = ({
                 className="carousel-image"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
-                  target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f3f4f6'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' font-family='sans-serif' font-size='18' fill='%236b7280'%3EImage not found%3C/text%3E%3C/svg%3E";
+                  target.src =
+                    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f3f4f6'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' font-family='sans-serif' font-size='18' fill='%236b7280'%3EImage not found%3C/text%3E%3C/svg%3E";
                 }}
               />
             )}
           </div>
 
-          <button 
+          <button
             className="carousel-nav carousel-nav-next"
             onClick={goToNext}
             aria-label="Next media"
@@ -163,8 +164,8 @@ const MediaCarousel: React.FC<MediaCarouselProps> = ({
             >
               {item.type === "video" ? (
                 <div className="thumbnail-video">
-                  <img 
-                    src={item.thumbnail || item.src} 
+                  <img
+                    src={item.thumbnail || item.src}
                     alt={item.alt}
                     className="thumbnail-image"
                   />
@@ -173,8 +174,8 @@ const MediaCarousel: React.FC<MediaCarouselProps> = ({
                   </div>
                 </div>
               ) : (
-                <img 
-                  src={item.src} 
+                <img
+                  src={item.src}
                   alt={item.alt}
                   className="thumbnail-image"
                 />

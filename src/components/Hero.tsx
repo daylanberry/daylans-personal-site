@@ -24,7 +24,7 @@ const Hero: React.FC = () => {
             <p className="hero-description">{personalInfo.bio}</p>
 
             <div className="hero-actions">
-              <a 
+              <a
                 href="/Daylan_Berry_Resume.pdf"
                 download="Daylan_Berry_Resume.pdf"
                 target="_blank"
@@ -34,7 +34,9 @@ const Hero: React.FC = () => {
                 <Download size={18} />
                 Download Resume
               </a>
-              <a href="#projects" className="btn btn-secondary">View My Work</a>
+              <a href="#projects" className="btn btn-secondary">
+                View My Work
+              </a>
             </div>
           </div>
 

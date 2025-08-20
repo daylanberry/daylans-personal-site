@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight, Video, Image, Maximize2 } from "lucide-react";
+import {
+  ChevronLeft,
+  ChevronRight,
+  Video,
+  Image,
+  Maximize2,
+} from "lucide-react";
 import "./MediaShowcase.css";
 
 interface MediaItem {
@@ -30,13 +36,13 @@ const MediaShowcase: React.FC<MediaShowcaseProps> = ({
   const [isFullscreen, setIsFullscreen] = useState(false);
 
   const goToNext = () => {
-    setCurrentIndex((prevIndex) => 
+    setCurrentIndex((prevIndex) =>
       prevIndex === items.length - 1 ? 0 : prevIndex + 1
     );
   };
 
   const goToPrevious = () => {
-    setCurrentIndex((prevIndex) => 
+    setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? items.length - 1 : prevIndex - 1
     );
   };
@@ -70,7 +76,11 @@ const MediaShowcase: React.FC<MediaShowcaseProps> = ({
   const currentItem = items[currentIndex];
 
   return (
-    <div className={`media-showcase ${variant} ${isFullscreen ? 'fullscreen' : ''}`}>
+    <div
+      className={`media-showcase ${variant} ${
+        isFullscreen ? "fullscreen" : ""
+      }`}
+    >
       {title && variant !== "hero" && (
         <div className="showcase-header">
           <h3 className="showcase-title">{title}</h3>
@@ -85,7 +95,7 @@ const MediaShowcase: React.FC<MediaShowcaseProps> = ({
           {/* Navigation arrows */}
           {items.length > 1 && (
             <>
-              <button 
+              <button
                 className="showcase-nav showcase-nav-prev"
                 onClick={goToPrevious}
                 aria-label="Previous"
@@ -93,7 +103,7 @@ const MediaShowcase: React.FC<MediaShowcaseProps> = ({
                 <ChevronLeft size={20} />
               </button>
 
-              <button 
+              <button
                 className="showcase-nav showcase-nav-next"
                 onClick={goToNext}
                 aria-label="Next"
@@ -127,7 +137,7 @@ const MediaShowcase: React.FC<MediaShowcaseProps> = ({
                   className="showcase-image"
                 />
                 {variant === "hero" && (
-                  <button 
+                  <button
                     className="fullscreen-toggle"
                     onClick={() => setIsFullscreen(!isFullscreen)}
                     aria-label="Toggle fullscreen"
@@ -153,11 +163,17 @@ const MediaShowcase: React.FC<MediaShowcaseProps> = ({
             {items.map((item, index) => (
               <button
                 key={item.id}
-                className={`showcase-thumb ${index === currentIndex ? "active" : ""}`}
+                className={`showcase-thumb ${
+                  index === currentIndex ? "active" : ""
+                }`}
                 onClick={() => goToSlide(index)}
               >
                 <img
-                  src={item.type === "video" ? (item.thumbnail || item.src) : item.src}
+                  src={
+                    item.type === "video"
+                      ? item.thumbnail || item.src
+                      : item.src
+                  }
                   alt={item.alt}
                 />
                 {item.type === "video" && (
@@ -185,14 +201,17 @@ const MediaShowcase: React.FC<MediaShowcaseProps> = ({
 
       {/* Fullscreen overlay */}
       {isFullscreen && (
-        <div className="fullscreen-overlay" onClick={() => setIsFullscreen(false)}>
+        <div
+          className="fullscreen-overlay"
+          onClick={() => setIsFullscreen(false)}
+        >
           <img
             src={currentItem.src}
             alt={currentItem.alt}
             className="fullscreen-image"
             onClick={(e) => e.stopPropagation()}
           />
-          <button 
+          <button
             className="fullscreen-close"
             onClick={() => setIsFullscreen(false)}
           >

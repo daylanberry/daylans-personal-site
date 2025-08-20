@@ -3,6 +3,7 @@
 ## MediaCarousel Component
 
 The MediaCarousel provides a comprehensive carousel experience with:
+
 - Large main display area
 - Navigation arrows
 - Thumbnail strip
@@ -11,14 +12,12 @@ The MediaCarousel provides a comprehensive carousel experience with:
 - Video support with controls
 
 ### Usage:
+
 ```tsx
 import MediaCarousel from "./components/MediaCarousel";
 import { suChefMedia } from "./data/mediaAssets";
 
-<MediaCarousel
-  title="App Screenshots & Demo Videos"
-  items={suChefMedia}
-/>
+<MediaCarousel title="App Screenshots & Demo Videos" items={suChefMedia} />;
 ```
 
 ## MediaShowcase Component
@@ -26,6 +25,7 @@ import { suChefMedia } from "./data/mediaAssets";
 The MediaShowcase provides different variants for different use cases:
 
 ### Default Variant (Current in Projects):
+
 ```tsx
 import MediaShowcase from "./components/MediaShowcase";
 
@@ -35,10 +35,11 @@ import MediaShowcase from "./components/MediaShowcase";
   variant="default"
   autoPlay={true}
   showThumbnails={true}
-/>
+/>;
 ```
 
 ### Hero Variant (Great for main sections):
+
 ```tsx
 <MediaShowcase
   items={suChefMedia}
@@ -49,6 +50,7 @@ import MediaShowcase from "./components/MediaShowcase";
 ```
 
 ### Full-Width Variant:
+
 ```tsx
 <MediaShowcase
   title="Project Gallery"
@@ -62,6 +64,7 @@ import MediaShowcase from "./components/MediaShowcase";
 ## Features:
 
 ### MediaCarousel:
+
 - ✅ Large, professional carousel layout
 - ✅ Thumbnail navigation strip
 - ✅ Progress indicators
@@ -72,6 +75,7 @@ import MediaShowcase from "./components/MediaShowcase";
 - ✅ Mobile-optimized
 
 ### MediaShowcase:
+
 - ✅ Multiple variants (default, hero, full-width)
 - ✅ Fullscreen toggle for hero variant
 - ✅ Auto-play option
@@ -84,12 +88,14 @@ import MediaShowcase from "./components/MediaShowcase";
 ## Comparison:
 
 **Use MediaCarousel when:**
+
 - You want a comprehensive, feature-rich carousel
 - You have multiple media items to showcase
 - You want thumbnail navigation
 - You need a professional portfolio presentation
 
 **Use MediaShowcase when:**
+
 - You want different visual styles/variants
 - You need a hero-style media display
 - You want fullscreen capabilities

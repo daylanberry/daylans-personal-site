@@ -21,26 +21,10 @@ const VideoGallery: React.FC<VideoGalleryProps> = ({
   videos,
   title = "Demo Videos",
 }) => {
-  // const [selectedVideo, setSelectedVideo] = useState<VideoItem | null>(null);
-  // const [isModalOpen, setIsModalOpen] = useState(false);
-
-  console.log("VideoGallery received videos:", videos);
-
   const handleVideoClick = (video: VideoItem) => {
     console.log("Video clicked:", video);
 
-    // Temporarily use the old behavior to debug
     window.open(video.src, "_blank");
-
-    // Comment out modal for now
-    // setSelectedVideo(video);
-    // setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    console.log("Closing video modal");
-    // setIsModalOpen(false);
-    // setSelectedVideo(null);
   };
 
   if (videos.length === 0) {
@@ -130,16 +114,6 @@ const VideoGallery: React.FC<VideoGalleryProps> = ({
           ))}
         </div>
       </div>
-
-      {/* Temporarily disabled for debugging */}
-      {/* {selectedVideo && (
-        <VideoModal
-          isOpen={isModalOpen}
-          onClose={closeModal}
-          videoSrc={selectedVideo.src}
-          title={selectedVideo.title || selectedVideo.alt}
-        />
-      )} */}
     </>
   );
 };
