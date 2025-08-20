@@ -1,0 +1,70 @@
+/* Mobile Debug CSS - Add this temporarily to identify overflow issues */
+
+/* Add borders to all elements to see what's causing overflow */
+@media (max-width: 768px) {
+  * {
+    outline: 1px solid red !important;
+    outline-offset: -1px !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Force everything to stay within viewport */
+  html,
+  body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    width: 100vw !important;
+  }
+
+  /* Ensure no element extends beyond viewport */
+  .hero,
+  .skills,
+  .projects,
+  .experience,
+  .contact,
+  .hero-container,
+  .skills-container,
+  .projects-container,
+  .experience-container,
+  .contact-container {
+    max-width: 100vw !important;
+    width: 100% !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Fix grid layouts */
+  .media-grid,
+  .skills-grid,
+  .projects-grid {
+    max-width: 100% !important;
+    width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  /* Fix any potential text overflow */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span,
+  div {
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    max-width: 100% !important;
+  }
+
+  /* Fix media elements */
+  img,
+  video,
+  canvas,
+  svg {
+    max-width: 100% !important;
+    width: auto !important;
+    height: auto !important;
+  }
+}
