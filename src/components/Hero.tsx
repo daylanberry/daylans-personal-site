@@ -46,13 +46,11 @@ const Hero: React.FC = () => {
 
           <div className="hero-visual">
             <div className="avatar-placeholder">
-              <div className="avatar-bg"></div>
-              <div className="avatar-text">
-                {personalInfo.name
-                  .split(" ")
-                  .map((name) => name[0])
-                  .join("")}
-              </div>
+              <img
+                src="/images/general/daylan.jpg"
+                alt={personalInfo.name}
+                className="avatar-image"
+              />
             </div>
 
             {/* Floating tech icons */}
