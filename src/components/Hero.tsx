@@ -21,7 +21,11 @@ const Hero: React.FC = () => {
               <span>{personalInfo.location}</span>
             </div>
 
-            <p className="hero-description">{personalInfo.bio}</p>
+            <div className="hero-description">
+              {personalInfo.bio.map((paragraph, index) => (
+                <p key={index}>{paragraph}</p>
+              ))}
+            </div>
 
             <div className="hero-actions">
               <a

@@ -1,4 +1,12 @@
 // Types for portfolio data
+export interface PersonalInfo {
+  name: string;
+  title: string;
+  bio: string[];
+  location: string;
+  email: string;
+}
+
 export interface Experience {
   company: string;
   position: string;

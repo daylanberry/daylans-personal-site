@@ -112,6 +112,14 @@
   max-width: 600px;
 }
 
+.hero-description p {
+  margin-bottom: 1.2rem;
+}
+
+.hero-description p:last-child {
+  margin-bottom: 0;
+}
+
 .hero-actions {
   display: flex;
   gap: 1rem;

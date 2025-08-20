@@ -1,14 +1,23 @@
 import type {
+  PersonalInfo,
   Experience,
   Project,
   Skill,
   ContactInfo,
 } from "../types/portfolio";
 
-export const personalInfo = {
+export const personalInfo: PersonalInfo = {
   name: "Daylan Berry",
   title: "Software Engineer",
-  bio: "Passionate frontend engineer with 4+ years of experience building user-centric applications at scale. Specialized in React, TypeScript, and modern web technologies. I thrive on creating seamless user experiences and have a proven track record of delivering high-impact features for millions of users. Currently expanding my skills into mobile development while maintaining a focus on performance, accessibility, and clean code architecture.",
+  bio: [
+    "I'm a full-stack engineer with 4+ years of experience building user-centric applications. On the frontend, I specialize in React, TypeScript, and Redux-Saga to manage complex state and deliver smooth, predictable user experiences. On the backend, I've worked with both Node.js and Python, giving me the ability to contribute across the stack and design features end-to-end.",
+
+    "At Caesars, I was trusted to lead the deployment of a major customer-facing feature used by a very large user base. The rollout required close coordination with stakeholders and executives, who relied on me to ensure the feature launched smoothly and without disruption. That experience taught me how to balance technical precision with clear communication and accountability at scale.",
+
+    "Right now, I'm building a full-stack application independently, which has pushed me to think more deeply about system design, data modeling, and deployment pipelines. I enjoy taking on projects that stretch me beyond just frontend, helping me grow as a well-rounded engineer.",
+
+    "Outside of engineering, I love being in the outdoors — skiing, playing ice hockey, and mountain biking are a big part of my life. I also enjoy picking up new technical skills, like experimenting with machine learning using TensorFlow, and I'm excited about finding ways to connect these explorations with my work as a developer.",
+  ],
   location: "Reno, NV (open to relocation)",
   email: "daylanberry@gmail.com",
 };
