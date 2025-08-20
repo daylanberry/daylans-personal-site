@@ -177,6 +177,10 @@
   position: relative;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  flex-shrink: 0;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  padding: 0;
+  margin: 0;
 }
 
 .avatar-image {
@@ -184,7 +188,11 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-  border-radius: 50%;
+  display: block;
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
 }
 
 .floating-icons {
@@ -250,6 +258,9 @@
   .avatar-placeholder {
     width: 200px;
     height: 200px;
+    margin: 0 auto;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
   }
 }
 
@@ -258,6 +269,24 @@
     padding: 1rem;
     width: 100%;
     max-width: 100%;
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    text-align: center;
+  }
+
+  .hero-visual {
+    order: -1;
+  }
+
+  .avatar-placeholder {
+    width: 160px;
+    height: 160px;
+    margin: 0 auto;
+    border: 3px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
   }
 
   .hero-title {
@@ -283,6 +312,25 @@
 }
 
 @media (max-width: 480px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .hero-visual {
+    order: -1;
+    margin-bottom: 1rem;
+  }
+
+  .avatar-placeholder {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto;
+    border: 3px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+  }
+
   .hero-actions {
     flex-direction: column;
     align-items: center;
@@ -327,8 +375,11 @@
   }
 
   .avatar-placeholder {
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
+    margin: 0 auto;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
   }
 
   .btn {
