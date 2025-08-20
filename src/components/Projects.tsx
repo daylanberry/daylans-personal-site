@@ -85,31 +85,6 @@ const Projects: React.FC = () => {
               </div>
             </div>
           ))}
-
-          {/* Placeholder for additional projects */}
-          <div className="project-card placeholder">
-            <div className="project-header">
-              <div className="project-icon">
-                <div className="icon-placeholder">🚀</div>
-              </div>
-            </div>
-
-            <div className="project-content">
-              <h3 className="project-title">More Projects Coming Soon</h3>
-              <p className="project-description">
-                I'm currently working on additional projects that showcase
-                different aspects of my development skills. Check back soon or
-                connect with me to learn about my latest work!
-              </p>
-            </div>
-
-            <div className="project-actions">
-              <button className="btn btn-secondary">
-                <Github size={16} />
-                View GitHub
-              </button>
-            </div>
-          </div>
         </div>
       </div>
     </section>
