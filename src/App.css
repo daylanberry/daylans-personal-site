@@ -73,19 +73,64 @@ main {
 .section-title {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #1f2937;
+  color: #1f2937 !important;
   margin: 0 0 1rem 0;
   word-wrap: break-word; /* Handle long titles on mobile */
 }
 
 .section-subtitle {
   font-size: 1.2rem;
-  color: #6b7280;
+  color: #6b7280 !important;
   margin: 0;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
   line-height: 1.5;
+}
+
+/* Special override for contact section with dark background */
+.contact .section-title {
+  color: white !important;
+}
+
+.contact .section-subtitle {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+#experience .section-header .section-title,
+#skills .section-header .section-title,
+#projects .section-header .section-title,
+.experience .section-header h2.section-title,
+.skills .section-header h2.section-title,
+.projects .section-header h2.section-title,
+.experience h2,
+.skills h2,
+.projects h2 {
+  color: #1f2937 !important;
+  -webkit-text-fill-color: #1f2937 !important;
+}
+
+#experience .section-header .section-subtitle,
+#skills .section-header .section-subtitle,
+#projects .section-header .section-subtitle,
+.experience .section-header p.section-subtitle,
+.skills .section-header p.section-subtitle,
+.projects .section-header p.section-subtitle {
+  color: #6b7280 !important;
+  -webkit-text-fill-color: #6b7280 !important;
+}
+
+/* Ensure specific sections have dark text */
+.experience .section-title,
+.skills .section-title,
+.projects .section-title {
+  color: #1f2937 !important;
+}
+
+.experience .section-subtitle,
+.skills .section-subtitle,
+.projects .section-subtitle {
+  color: #6b7280 !important;
 }
 
 /* Responsive typography */
