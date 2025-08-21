@@ -17,13 +17,13 @@
 .section-title {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #1f2937;
+  color: #1f2937 !important;
   margin: 0 0 1rem 0;
 }
 
 .section-subtitle {
   font-size: 1.2rem;
-  color: #6b7280;
+  color: #6b7280 !important;
   margin: 0;
   max-width: 600px;
   margin-left: auto;
@@ -168,6 +168,7 @@
 
   .section-title {
     font-size: 2rem;
+    color: #1f2937 !important;
   }
 
   .section-subtitle {
