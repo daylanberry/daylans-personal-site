@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { ChevronLeft, ChevronRight, Play, Video } from "lucide-react";
 import "./MediaCarousel.css";
 
@@ -49,17 +49,6 @@ const MediaCarousel: React.FC<MediaCarouselProps> = ({
       setIsPlaying(true);
     }
   };
-
-  // Auto-advance for images (but not when video is playing)
-  useEffect(() => {
-    if (items[currentIndex]?.type === "image" && !isPlaying) {
-      const timer = setTimeout(() => {
-        goToNext();
-      }, 4000); // 4 seconds per image
-
-      return () => clearTimeout(timer);
-    }
-  }, [currentIndex, isPlaying, items]);
 
   if (!items || items.length === 0) {
     return (
