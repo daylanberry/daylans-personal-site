@@ -34,15 +34,19 @@ const Skills: React.FC = () => {
     switch (category.toLowerCase()) {
       case "frontend technologies":
         return "blue";
-      case "state management & data":
+      case "backend & databases":
         return "green";
-      case "ui/ux & styling":
-        return "purple";
-      case "development tools":
+      case "apis & data management":
+        return "teal";
+      case "cloud & devops":
         return "orange";
+      case "testing & quality assurance":
+        return "purple";
+      case "ui/ux & styling":
+        return "pink";
       case "authentication & security":
         return "red";
-      case "mobile development":
+      case "mobile & ai/ml":
         return "indigo";
       default:
         return "blue";

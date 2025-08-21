@@ -48,6 +48,26 @@
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  animation: slideInUp 0.6s ease-out both;
+}
+
+.skill-category:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.skill-category:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.skill-category:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.skill-category:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.skill-category:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.skill-category:nth-child(6) {
+  animation-delay: 0.6s;
 }
 
 .skill-category::before {
@@ -96,6 +116,10 @@
   background: linear-gradient(135deg, #10b981, #059669);
 }
 
+.category-icon.teal {
+  background: linear-gradient(135deg, #14b8a6, #0f766e);
+}
+
 .category-icon.purple {
   background: linear-gradient(135deg, #8b5cf6, #7c3aed);
 }
@@ -104,8 +128,16 @@
   background: linear-gradient(135deg, #f59e0b, #d97706);
 }
 
+.category-icon.pink {
+  background: linear-gradient(135deg, #ec4899, #db2777);
+}
+
 .category-icon.red {
   background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+.category-icon.rose {
+  background: linear-gradient(135deg, #f43f5e, #e11d48);
 }
 
 .category-icon.indigo {
@@ -123,8 +155,8 @@
 }
 
 .skill-category:nth-child(3) {
-  --category-color: #8b5cf6;
-  --category-color-light: #c4b5fd;
+  --category-color: #14b8a6;
+  --category-color-light: #5eead4;
 }
 
 .skill-category:nth-child(4) {
@@ -133,11 +165,21 @@
 }
 
 .skill-category:nth-child(5) {
+  --category-color: #8b5cf6;
+  --category-color-light: #c4b5fd;
+}
+
+.skill-category:nth-child(6) {
+  --category-color: #ec4899;
+  --category-color-light: #f9a8d4;
+}
+
+.skill-category:nth-child(7) {
   --category-color: #ef4444;
   --category-color-light: #fca5a5;
 }
 
-.skill-category:nth-child(6) {
+.skill-category:nth-child(8) {
   --category-color: #6366f1;
   --category-color-light: #a5b4fc;
 }
@@ -166,6 +208,7 @@
   animation: fadeInUp 0.6s ease-out both;
   position: relative;
   overflow: hidden;
+  transform-origin: center;
 }
 
 .skill-pill::before {
@@ -189,7 +232,7 @@
 }
 
 .skill-pill:hover {
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.05);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
@@ -202,6 +245,10 @@
   background: linear-gradient(135deg, #10b981, #059669);
 }
 
+.skill-pill.teal {
+  background: linear-gradient(135deg, #14b8a6, #0f766e);
+}
+
 .skill-pill.purple {
   background: linear-gradient(135deg, #8b5cf6, #7c3aed);
 }
@@ -210,8 +257,16 @@
   background: linear-gradient(135deg, #f59e0b, #d97706);
 }
 
+.skill-pill.pink {
+  background: linear-gradient(135deg, #ec4899, #db2777);
+}
+
 .skill-pill.red {
   background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+.skill-pill.rose {
+  background: linear-gradient(135deg, #f43f5e, #e11d48);
 }
 
 .skill-pill.indigo {
@@ -222,6 +277,17 @@
   from {
     opacity: 0;
     transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
