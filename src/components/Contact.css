@@ -33,7 +33,7 @@
 }
 
 .contact-card,
-.form-card {
+.cta-card {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   border-radius: 20px;
@@ -42,7 +42,7 @@
 }
 
 .contact-card h3,
-.form-card h3 {
+.cta-card h3 {
   font-size: 1.5rem;
   font-weight: 700;
   margin: 0 0 1.5rem 0;
@@ -100,63 +100,57 @@
   color: rgba(255, 255, 255, 0.8);
 }
 
-.contact-form {
+/* CTA Section Styles */
+.contact-cta-section {
   display: flex;
   flex-direction: column;
+}
+
+.cta-card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 1.5rem;
 }
 
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+.cta-icon {
+  width: 4rem;
+  height: 4rem;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-bottom: 0.5rem;
 }
 
-.form-group {
+.cta-card h3 {
+  font-size: 1.75rem;
+  margin: 0 0 1rem 0;
+  text-align: center;
+}
+
+.cta-card p {
+  line-height: 1.6;
+  opacity: 0.9;
+  max-width: 400px;
+  margin: 0 0 2rem 0;
+}
+
+.cta-buttons {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-}
-
-.form-group label {
-  font-weight: 600;
-  color: white;
-  font-size: 0.9rem;
-}
-
-.form-group input,
-.form-group textarea {
-  padding: 0.75rem 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-}
-
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-  color: rgba(255, 255, 255, 0.6);
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: rgba(255, 255, 255, 0.4);
-  background: rgba(255, 255, 255, 0.15);
-}
-
-.form-group textarea {
-  resize: vertical;
-  min-height: 120px;
+  gap: 1rem;
+  width: 100%;
+  max-width: 300px;
 }
 
 .btn {
-  padding: 0.75rem 2rem;
+  padding: 0.875rem 2rem;
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
@@ -166,13 +160,13 @@
   justify-content: center;
   gap: 0.5rem;
   text-decoration: none;
+  width: 100%;
 }
 
 .btn-primary {
   background: linear-gradient(135deg, #3b82f6, #1d4ed8);
   color: white;
   box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
-  margin-top: 1rem;
 }
 
 .btn-primary:hover {
@@ -180,24 +174,31 @@
   box-shadow: 0 6px 25px rgba(59, 130, 246, 0.4);
 }
 
-.success-message {
-  text-align: center;
-  padding: 2rem 0;
-}
-
-.success-message svg {
-  color: #10b981;
-  margin-bottom: 1rem;
-}
-
-.success-message h3 {
-  margin: 1rem 0;
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
   color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
 }
 
-.success-message p {
-  opacity: 0.9;
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.response-note {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.response-note p {
   margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
 }
 
 /* Mobile responsiveness */
@@ -205,6 +206,11 @@
   .contact-content {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+
+  .cta-buttons {
+    flex-direction: row;
+    max-width: 100%;
   }
 }
 
@@ -218,12 +224,8 @@
   }
 
   .contact-card,
-  .form-card {
+  .cta-card {
     padding: 2rem;
-  }
-
-  .form-row {
-    grid-template-columns: 1fr;
   }
 
   .contact-method {
@@ -231,20 +233,33 @@
     text-align: center;
     gap: 0.5rem;
   }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .cta-card h3 {
+    font-size: 1.5rem;
+  }
 }
 
 @media (max-width: 480px) {
   .contact-card,
-  .form-card {
+  .cta-card {
     padding: 1.5rem;
   }
 
-  .form-group input,
-  .form-group textarea {
-    padding: 0.625rem 0.75rem;
+  .btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
   }
 
-  .btn {
-    padding: 0.625rem 1.5rem;
+  .cta-icon {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .cta-card h3 {
+    font-size: 1.25rem;
   }
 }

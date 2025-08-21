@@ -1,67 +1,37 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Mail,
   Linkedin,
   Github,
   MapPin,
-  Send,
-  CheckCircle,
   Download,
+  MessageCircle,
 } from "lucide-react";
 import { contactInfo } from "../data/portfolioData";
 import "./Contact.css";
 
 const Contact: React.FC = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Simulate form submission
-    console.log("Form submitted:", formData);
-    setIsSubmitted(true);
-
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({ name: "", email: "", subject: "", message: "" });
-    }, 3000);
-  };
-
   return (
     <section id="contact" className="contact">
       <div className="contact-container">
         <div className="section-header">
-          <h2 className="section-title">Let's Connect</h2>
+          <h2 className="section-title">Let's Work Together</h2>
           <p className="section-subtitle">
-            Ready to discuss opportunities or just want to say hello? I'd love
-            to hear from you!
+            I'm actively seeking new opportunities and would love to discuss how
+            I can contribute to your team!
           </p>
         </div>
 
         <div className="contact-content">
           <div className="contact-info">
             <div className="contact-card">
-              <h3>Get in Touch</h3>
+              <h3>Ready to Join Your Team</h3>
               <p>
-                I'm always open to discussing new opportunities, collaborations,
-                or just chatting about frontend development and mobile apps.
-                Feel free to reach out through any of the channels below.
+                I'm actively looking for my next role as a Software Engineer,
+                with a focus on frontend development and full-stack
+                opportunities. I'm passionate about building user-centric
+                applications and would love to bring my experience in modern web
+                technologies and mobile development to your organization.
               </p>
 
               <div className="contact-methods">
@@ -139,81 +109,42 @@ const Contact: React.FC = () => {
             </div>
           </div>
 
-          <div className="contact-form-section">
-            <div className="form-card">
-              {!isSubmitted ? (
-                <>
-                  <h3>Send a Message</h3>
-                  <form onSubmit={handleSubmit} className="contact-form">
-                    <div className="form-row">
-                      <div className="form-group">
-                        <label htmlFor="name">Name</label>
-                        <input
-                          type="text"
-                          id="name"
-                          name="name"
-                          value={formData.name}
-                          onChange={handleInputChange}
-                          required
-                          placeholder="Your name"
-                        />
-                      </div>
-                      <div className="form-group">
-                        <label htmlFor="email">Email</label>
-                        <input
-                          type="email"
-                          id="email"
-                          name="email"
-                          value={formData.email}
-                          onChange={handleInputChange}
-                          required
-                          placeholder="your.email@example.com"
-                        />
-                      </div>
-                    </div>
+          <div className="contact-cta-section">
+            <div className="cta-card">
+              <div className="cta-icon">
+                <MessageCircle size={48} />
+              </div>
+              <h3>Interested in Hiring?</h3>
+              <p>
+                I'm available for full-time opportunities and excited to discuss
+                how my experience in frontend development, mobile applications,
+                and full-stack engineering can help drive your team's success.
+                Let's start the conversation!
+              </p>
 
-                    <div className="form-group">
-                      <label htmlFor="subject">Subject</label>
-                      <input
-                        type="text"
-                        id="subject"
-                        name="subject"
-                        value={formData.subject}
-                        onChange={handleInputChange}
-                        required
-                        placeholder="What's this about?"
-                      />
-                    </div>
+              <div className="cta-buttons">
+                <a
+                  href={`mailto:${contactInfo.email}?subject=Job Opportunity Discussion&body=Hi Daylan,%0D%0A%0D%0AI'm reaching out regarding a potential opportunity with our team...`}
+                  className="btn btn-primary"
+                >
+                  <Mail size={18} />
+                  Discuss Opportunities
+                </a>
 
-                    <div className="form-group">
-                      <label htmlFor="message">Message</label>
-                      <textarea
-                        id="message"
-                        name="message"
-                        value={formData.message}
-                        onChange={handleInputChange}
-                        required
-                        rows={5}
-                        placeholder="Tell me about your project or just say hi!"
-                      ></textarea>
-                    </div>
+                <a
+                  href={contactInfo.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-secondary"
+                >
+                  <Linkedin size={18} />
+                  View Professional Profile
+                </a>
+              </div>
 
-                    <button type="submit" className="btn btn-primary">
-                      <Send size={18} />
-                      Send Message
-                    </button>
-                  </form>
-                </>
-              ) : (
-                <div className="success-message">
-                  <CheckCircle size={48} />
-                  <h3>Message Sent!</h3>
-                  <p>
-                    Thanks for reaching out! I'll get back to you as soon as
-                    possible.
-                  </p>
-                </div>
-              )}
+              <div className="response-note">
+                <p>💼 Available for immediate start • Open to relocation</p>
+              </div>
             </div>
           </div>
         </div>
