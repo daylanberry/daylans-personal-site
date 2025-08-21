@@ -42,13 +42,37 @@ export const suChefMedia: MediaItem[] = [
     caption: "Recipe import interface with URL and social media options",
   },
   {
+    id: "suchef-recipe-cookbook-image",
+    type: "image",
+    src: "/images/suchef/cookbooks.png",
+    alt: "SuChef recipe cookbook screen",
+    caption: "Recipe organization interface with user-defined cookbooks",
+  },
+  {
     id: "suchef-recipe-import-video",
     type: "video",
     src: "/videos/suchef/browser-import.mp4",
-    thumbnail: "/images/suchef/import.png", // Use the same image as thumbnail
+    thumbnail: "/images/suchef/import.png",
     alt: "SuChef recipe import demo video",
     caption:
       "Live demo: Import recipes from any source including social media and websites",
+  },
+  {
+    id: "suchef-recipe-step-by-step-video",
+    type: "video",
+    src: "/videos/suchef/step-by-step.mp4",
+    thumbnail: "/images/suchef/step-by-step.png",
+    alt: "SuChef recipe step-by-step demo video",
+    caption:
+      "Live demo: Import recipes from any source including social media and websites",
+  },
+  {
+    id: "suchef-recipe-cookbook-video",
+    type: "video",
+    src: "/videos/suchef/cookbooks.mp4",
+    thumbnail: "/images/suchef/cookbooks.png",
+    alt: "SuChef recipe cookbook demo video",
+    caption: "Live demo: Organize recipes into user-defined cookbooks",
   },
 
   // Screenshots (when you have them):
