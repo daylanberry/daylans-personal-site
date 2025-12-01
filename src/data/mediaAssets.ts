@@ -74,6 +74,14 @@ export const suChefMedia: MediaItem[] = [
     alt: "SuChef recipe cookbook demo video",
     caption: "Live demo: Organize recipes into user-defined cookbooks",
   },
+  {
+    id: "suchef-recipe-meal-plan-video",
+    type: "video",
+    src: "/videos/suchef/meal-plan.mp4",
+    thumbnail: "/images/suchef/meal-plan.png",
+    alt: "SuChef recipe cookbook demo video",
+    caption: "Live demo: Walking through the full meal-planning flow",
+  },
 
   // Screenshots (when you have them):
   // {
