@@ -1,10 +1,11 @@
 import React from "react";
 import {
-  Mail,
-  Linkedin,
-  Github,
-  MapPin,
+  ArrowUpRight,
   Download,
+  Github,
+  Linkedin,
+  Mail,
+  MapPin,
   MessageCircle,
 } from "lucide-react";
 import { contactInfo } from "../data/portfolioData";
@@ -14,137 +15,87 @@ const Contact: React.FC = () => {
   return (
     <section id="contact" className="contact">
       <div className="contact-container">
-        <div className="section-header">
-          <h2 className="section-title">Let's Work Together</h2>
-          <p className="section-subtitle">
-            I'm actively seeking new opportunities and would love to discuss how
-            I can contribute to your team!
-          </p>
-        </div>
-
         <div className="contact-content">
-          <div className="contact-info">
-            <div className="contact-card">
-              <h3>Ready to Join Your Team</h3>
-              <p>
-                I'm actively looking for my next role as a Software Engineer,
-                with a focus on frontend development and full-stack
-                opportunities. I'm passionate about building user-centric
-                applications and would love to bring my experience in modern web
-                technologies and mobile development to your organization.
-              </p>
-
-              <div className="contact-methods">
-                <div className="contact-method">
-                  <div className="method-icon">
-                    <Mail size={20} />
-                  </div>
-                  <div className="method-content">
-                    <h4>Email</h4>
-                    <a href={`mailto:${contactInfo.email}`}>
-                      {contactInfo.email}
-                    </a>
-                  </div>
-                </div>
-
-                <div className="contact-method">
-                  <div className="method-icon">
-                    <Linkedin size={20} />
-                  </div>
-                  <div className="method-content">
-                    <h4>LinkedIn</h4>
-                    <a
-                      href={contactInfo.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Connect with me
-                    </a>
-                  </div>
-                </div>
-
-                <div className="contact-method">
-                  <div className="method-icon">
-                    <Github size={20} />
-                  </div>
-                  <div className="method-content">
-                    <h4>GitHub</h4>
-                    <a
-                      href={contactInfo.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      View my code
-                    </a>
-                  </div>
-                </div>
-
-                <div className="contact-method">
-                  <div className="method-icon">
-                    <MapPin size={20} />
-                  </div>
-                  <div className="method-content">
-                    <h4>Location</h4>
-                    <span>{contactInfo.location}</span>
-                  </div>
-                </div>
-
-                <div className="contact-method">
-                  <div className="method-icon">
-                    <Download size={20} />
-                  </div>
-                  <div className="method-content">
-                    <h4>Resume</h4>
-                    <a
-                      href="/Daylan_Berry_Resume.pdf"
-                      download="Daylan_Berry_Resume.pdf"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Download PDF
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="contact-copy">
+            <span className="section-eyebrow">Contact</span>
+            <h2 className="section-title">Let’s build something worth noticing.</h2>
+            <p className="section-subtitle">
+              I’m looking for a product-focused engineering role where craft,
+              accountability, and momentum matter.
+            </p>
           </div>
 
-          <div className="contact-cta-section">
-            <div className="cta-card">
+          <div className="contact-card">
+            <div className="contact-card-header">
               <div className="cta-icon">
-                <MessageCircle size={48} />
+                <MessageCircle size={28} />
               </div>
-              <h3>Interested in Hiring?</h3>
-              <p>
-                I'm available for full-time opportunities and excited to discuss
-                how my experience in frontend development, mobile applications,
-                and full-stack engineering can help drive your team's success.
-                Let's start the conversation!
-              </p>
+              <div>
+                <h3>Open to full-time roles</h3>
+                <p>Frontend, mobile, and full-stack product engineering.</p>
+              </div>
+            </div>
 
-              <div className="cta-buttons">
-                <a
-                  href={`mailto:${contactInfo.email}?subject=Job Opportunity Discussion&body=Hi Daylan,%0D%0A%0D%0AI'm reaching out regarding a potential opportunity with our team...`}
-                  className="btn btn-primary"
-                >
-                  <Mail size={18} />
-                  Discuss Opportunities
-                </a>
+            <div className="contact-methods">
+              <a className="contact-method" href={`mailto:${contactInfo.email}`}>
+                <Mail size={20} />
+                <span>{contactInfo.email}</span>
+                <ArrowUpRight size={16} />
+              </a>
 
+              {contactInfo.linkedin ? (
                 <a
+                  className="contact-method"
                   href={contactInfo.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn btn-secondary"
                 >
-                  <Linkedin size={18} />
-                  View Professional Profile
+                  <Linkedin size={20} />
+                  <span>LinkedIn</span>
+                  <ArrowUpRight size={16} />
                 </a>
-              </div>
+              ) : null}
 
-              <div className="response-note">
-                <p>💼 Available for immediate start • Open to relocation</p>
-              </div>
+              {contactInfo.github ? (
+                <a
+                  className="contact-method"
+                  href={contactInfo.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Github size={20} />
+                  <span>GitHub</span>
+                  <ArrowUpRight size={16} />
+                </a>
+              ) : null}
+
+              {contactInfo.location ? (
+                <div className="contact-method contact-method-static">
+                  <MapPin size={20} />
+                  <span>{contactInfo.location}</span>
+                </div>
+              ) : null}
+            </div>
+
+            <div className="cta-buttons">
+              <a
+                href={`mailto:${contactInfo.email}?subject=Engineering Opportunity&body=Hi Daylan,%0D%0A%0D%0AI wanted to reach out about...`}
+                className="btn btn-primary"
+              >
+                <Mail size={18} />
+                Start a Conversation
+              </a>
+
+              <a
+                href="/Daylan_Berry_Resume.pdf"
+                download="Daylan_Berry_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-secondary"
+              >
+                <Download size={18} />
+                Resume
+              </a>
             </div>
           </div>
         </div>

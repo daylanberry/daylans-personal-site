@@ -1,5 +1,5 @@
 import React from "react";
-import { Menu, X, Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, Menu, X } from "lucide-react";
 import "./Header.css";
 
 interface HeaderProps {
@@ -13,8 +13,8 @@ const Header: React.FC<HeaderProps> = ({ activeSection, onSectionChange }) => {
   const navItems = [
     { id: "about", label: "About" },
     { id: "experience", label: "Experience" },
-    { id: "projects", label: "Projects" },
-    { id: "skills", label: "Skills" },
+    { id: "projects", label: "Work" },
+    { id: "skills", label: "Stack" },
     { id: "contact", label: "Contact" },
   ];
 
@@ -26,31 +26,32 @@ const Header: React.FC<HeaderProps> = ({ activeSection, onSectionChange }) => {
   return (
     <header className="header">
       <div className="header-container">
-        <div className="logo">
-          <h2>Daylan Berry</h2>
-        </div>
+        <button className="logo" onClick={() => handleNavClick("about")}>
+          <span className="logo-mark">DB</span>
+          <span className="logo-copy">
+            <strong>Daylan Berry</strong>
+            <small>Software Engineer</small>
+          </span>
+        </button>
 
-        {/* Desktop Navigation */}
-        <nav className="desktop-nav">
+        <nav className="desktop-nav" aria-label="Primary navigation">
           {navItems.map((item) => (
             <button
               key={item.id}
               onClick={() => handleNavClick(item.id)}
-              className={`nav-link ${
-                activeSection === item.id ? "active" : ""
-              }`}
+              className={`nav-link ${activeSection === item.id ? "active" : ""}`}
             >
               {item.label}
             </button>
           ))}
         </nav>
 
-        {/* Social Links */}
-        <div className="social-links">
+        <div className="social-links" aria-label="Social links">
           <a
             href="https://github.com/daylanberry"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="GitHub"
           >
             <Github size={20} />
           </a>
@@ -58,26 +59,26 @@ const Header: React.FC<HeaderProps> = ({ activeSection, onSectionChange }) => {
             href="https://www.linkedin.com/in/daylan-berry-389ba790/"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="LinkedIn"
           >
             <Linkedin size={20} />
           </a>
-          <a href="mailto:daylanberry@gmail.com">
+          <a href="mailto:daylanberry@gmail.com" aria-label="Email">
             <Mail size={20} />
           </a>
         </div>
 
-        {/* Mobile Menu Toggle */}
         <button
           className="mobile-menu-toggle"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label={isMobileMenuOpen ? "Close navigation" : "Open navigation"}
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* Mobile Navigation */}
-      {isMobileMenuOpen && (
-        <nav className="mobile-nav">
+      {isMobileMenuOpen ? (
+        <nav className="mobile-nav" aria-label="Mobile navigation">
           {navItems.map((item) => (
             <button
               key={item.id}
@@ -94,6 +95,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection, onSectionChange }) => {
               href="https://github.com/daylanberry"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="GitHub"
             >
               <Github size={20} />
             </a>
@@ -101,15 +103,16 @@ const Header: React.FC<HeaderProps> = ({ activeSection, onSectionChange }) => {
               href="https://www.linkedin.com/in/daylan-berry-389ba790/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="LinkedIn"
             >
               <Linkedin size={20} />
             </a>
-            <a href="mailto:daylanberry@gmail.com">
+            <a href="mailto:daylanberry@gmail.com" aria-label="Email">
               <Mail size={20} />
             </a>
           </div>
         </nav>
-      )}
+      ) : null}
     </header>
   );
 };

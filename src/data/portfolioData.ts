@@ -8,15 +8,13 @@ import type {
 
 export const personalInfo: PersonalInfo = {
   name: "Daylan Berry",
-  title: "Software Engineer",
+  title: "Product-minded Software Engineer",
   bio: [
-    "I'm a full-stack engineer with 4+ years of experience building user-centric applications. On the frontend, I specialize in React, TypeScript, and Redux-Saga to manage complex state and deliver smooth, predictable user experiences. On the backend, I've worked with both Node.js and Python, giving me the ability to contribute across the stack and design features end-to-end.",
+    "I build polished, production-minded web and mobile experiences with React, TypeScript, React Native, and backend systems that can carry real users.",
 
-    "At Caesars, I was trusted to lead the deployment of a major customer-facing feature used by a very large user base. The rollout required close coordination with stakeholders and executives, who relied on me to ensure the feature launched smoothly and without disruption. That experience taught me how to balance technical precision with clear communication and accountability at scale.",
+    "At Caesars Digital, I shipped customer-facing registration, authentication, identity verification, and landing-page systems in regulated environments where reliability and clear execution mattered.",
 
-    "Right now, I'm building a full-stack application independently, which has pushed me to think more deeply about system design, data modeling, and deployment pipelines. I enjoy taking on projects that stretch me beyond just frontend, helping me grow as a well-rounded engineer.",
-
-    "Outside of engineering, I love being in the outdoors — skiing, playing ice hockey, and mountain biking are a big part of my life. I also enjoy picking up new technical skills, like experimenting with machine learning using TensorFlow, and I'm excited about finding ways to connect these explorations with my work as a developer.",
+    "I like work that sits close to the product: fast interfaces, thoughtful flows, calm complexity, and enough backend fluency to own features end to end.",
   ],
   location: "Reno, NV (open to relocation)",
   email: "daylanberry@gmail.com",
@@ -38,6 +36,31 @@ export const experiences: Experience[] = [
 
 export const projects: Project[] = [
   {
+    name: "Loadlight - Voice-first Todo App",
+    description:
+      "Shared todo app for capturing real-life tasks from voice, widgets, and inbox workflows, then keeping the right work visible across groups and Apple Reminders.",
+    duration: "05/2026 – Present",
+    status: "In development",
+    technologies: [
+      "React Native",
+      "Expo",
+      "TypeScript",
+      "Supabase",
+      "PostgreSQL",
+      "Edge Functions",
+      "WidgetKit",
+      "Apple Reminders",
+    ],
+    features: [
+      "Built voice capture that turns natural speech into structured tasks with review before saving",
+      "Added iOS widgets that deep-link directly into record and type capture flows",
+      "Designed Inbox workflows across personal and shared groups with completion history",
+      "Implemented Apple Reminders sync for assigned open tasks outside the app",
+      "Built fairness, nudges, recurrence, subtasks, and task detail flows for shared households",
+      "Added server-side AI quota controls and a remote kill switch for cost protection",
+    ],
+  },
+  {
     name: "SuChef - Recipe Organizer",
     description:
       "Mobile app currently in TestFlight for iOS that helps users organize, customize, and plan meals with recipes from multiple sources.",
@@ -58,7 +81,7 @@ export const projects: Project[] = [
       "Allows users to customize existing recipes with suggested prompts and editable fields for personalized variations",
       "Created dynamic calendar and weekly meal planning views to support user meal prep workflows",
       "Implemented recipe organization via user-defined cookbooks with searchable indexing for quick retrieval",
-      "• Implemented recipe-to-grocery list feature that auto-categorizes ingredients for streamlined shopping",
+      "Implemented recipe-to-grocery list feature that auto-categorizes ingredients for streamlined shopping",
     ],
   },
 ];

@@ -49,15 +49,6 @@ export const suChefMedia: MediaItem[] = [
     caption: "Recipe organization interface with user-defined cookbooks",
   },
   {
-    id: "suchef-recipe-import-video",
-    type: "video",
-    src: "/videos/suchef/browser-import.mp4",
-    thumbnail: "/images/suchef/import.png",
-    alt: "SuChef recipe import demo video",
-    caption:
-      "Live demo: Import recipes from any source including social media and websites",
-  },
-  {
     id: "suchef-recipe-step-by-step-video",
     type: "video",
     src: "/videos/suchef/step-by-step.mp4",
@@ -139,6 +130,60 @@ export const suChefMedia: MediaItem[] = [
   // }
 ];
 
+export const loadlightMedia: MediaItem[] = [
+  {
+    id: "loadlight-shared-todos",
+    type: "image",
+    src: "/images/loadlight/01-shared-todos.png",
+    alt: "Loadlight shared task list screen",
+    caption: "Shared task lists with assignees, due dates, and household context",
+  },
+  {
+    id: "loadlight-recording",
+    type: "image",
+    src: "/images/loadlight/02-recording.png",
+    alt: "Loadlight voice recording capture screen",
+    caption: "Voice capture turns spoken tasks into structured items",
+  },
+  {
+    id: "loadlight-widget-demo",
+    type: "video",
+    src: "/videos/loadlight/widget-demo.mp4",
+    thumbnail: "/images/loadlight/02-recording.png",
+    alt: "Loadlight iOS widget demo video",
+    caption:
+      "Home Screen widget flow for typing or recording tasks without opening the app first",
+  },
+  {
+    id: "loadlight-calendar",
+    type: "image",
+    src: "/images/loadlight/03-calendar.png",
+    alt: "Loadlight calendar view screen",
+    caption: "Calendar view for scheduled tasks and due dates",
+  },
+  {
+    id: "loadlight-fairness",
+    type: "image",
+    src: "/images/loadlight/04-fairness.png",
+    alt: "Loadlight fairness dashboard screen",
+    caption: "Fairness tools surface workload balance across a shared group",
+  },
+  {
+    id: "loadlight-nudges",
+    type: "image",
+    src: "/images/loadlight/05-nudges.png",
+    alt: "Loadlight nudges and inbox screen",
+    caption: "Inbox and nudges keep assigned work visible",
+  },
+  {
+    id: "loadlight-reminders",
+    type: "image",
+    src: "/images/loadlight/07-reminders.png",
+    alt: "Loadlight Apple Reminders sync screen",
+    caption: "Apple Reminders sync keeps assigned tasks available outside the app",
+  },
+];
+
 // Instructions for adding your media:
 // 1. Create a 'public/images/suchef/' folder in your project
 // 2. Create a 'public/videos/suchef/' folder in your project
@@ -161,5 +206,5 @@ export const recommendedSuChefMedia = [
 
 // Other projects can have their own media arrays:
 export const otherProjectsMedia: { [key: string]: MediaItem[] } = {
-  // Add media for future projects here
+  loadlight: loadlightMedia,
 };
